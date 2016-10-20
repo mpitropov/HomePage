@@ -1,9 +1,22 @@
 {
-    "version": "0.0.0",
-    "name": "HomePage",
-    "devDependencies": {
-        "grunt": "0.4.5",
-        "grunt-contrib-uglify": "0.7.0",
-        "grunt-contrib-watch": "0.6.1"
-    }
+  "version": "0.0.1",
+  "name": "HomePage",
+  "private": true,
+  "dependencies": {
+    "clean-css": "^3.4.20",
+    "html-minifier": "^3.1.0",
+    "imagemin-cli": "^3.0.0",
+    "uglifyjs": "^2.4.10"
+  },
+  "scripts": {
+    "build:js": "uglifyjs js/jquery.js js/bootstrap.min.js js/jquery.easing.min.js js/jquery.fittext.js js/wow.min.js js/creative.js js/cbpAnimatedHeader.js js/classie.js -o wwwroot/app.js",
+    "build:css": "cat css/bootstrap.min.css css/animate.min.css css/creative.css | cleancss --s0 -o wwwroot/css/style.min.css",
+    "build:html": "html-minifier --collapse-whitespace --remove-comments -o wwwroot/index.html index.html",
+    "build:fonts": "cp font-awesome/css/font-awesome.min.css wwwroot/font-awesome/css/font-awesome.min.css && cp font-awesome/fonts/fontawesome-webfont.woff2 wwwroot/font-awesome/fonts/fontawesome-webfont.woff2",
+    "build:img": "imagemin img/* -o=wwwroot/img && imagemin img/portfolio/* -o=wwwroot/img/portfolio",
+    "build": "npm run build:js && npm run build:css && npm run build:html && npm run build:fonts && npm run build:img",
+    "clean": "rm -rf wwwroot",
+    "setup": "mkdir wwwroot && mkdir wwwroot/css && mkdir wwwroot/img && mkdir wwwroot/img/portfolio && mkdir wwwroot/font-awesome && mkdir wwwroot/font-awesome/css && mkdir wwwroot/font-awesome/fonts",
+    "rebuild": "npm run clean && npm run setup && npm run build"
+  }
 }

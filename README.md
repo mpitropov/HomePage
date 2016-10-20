@@ -1,4 +1,10 @@
-# HomePage
-My homepage that I created using HTML, CSS, JavaScript and Bootstrap. I also used VS2015 and Grunt tasks to speed up my development process.
+# [My personal homepage](//matthewpitropov.me)
 
-Please go to my website at matthewpitropov.me
+Created using
+* *Bootstrap:* Creative Bootstrap Theme 
+* *npm scripts:* clean-css, html-minifier, imagemin-cli, uglifyjs
+
+# To Build
+```sh
+npm run rebuild
+```
