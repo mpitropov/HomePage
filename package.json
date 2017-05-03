@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build:js": "uglifyjs js/jquery.js js/bootstrap.min.js js/jquery.easing.min.js js/jquery.fittext.js js/wow.min.js js/creative.js js/cbpAnimatedHeader.js js/classie.js -o wwwroot/app.js",
-    "build:css": "cat css/bootstrap.min.css css/animate.min.css css/creative.css | cleancss --s0 -o wwwroot/css/style.min.css",
+    "build:css": "cat css/bootstrap.min.css css/animate.min.css css/creative.css css/timeline.css | cleancss --s0 -o wwwroot/css/style.min.css",
     "build:html": "html-minifier --collapse-whitespace --remove-comments -o wwwroot/index.html index.html",
     "build:fonts": "cp font-awesome/css/font-awesome.min.css wwwroot/font-awesome/css/font-awesome.min.css && cp font-awesome/fonts/fontawesome-webfont.woff2 wwwroot/font-awesome/fonts/fontawesome-webfont.woff2",
     "build:img": "imagemin img/* -o=wwwroot/img && imagemin img/portfolio/* -o=wwwroot/img/portfolio",
